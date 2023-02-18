@@ -15,7 +15,7 @@ int main(void)
 		current_int++;
 	}
 
-	hex_letter = 'A';
+	char hex_letter = 'A';
 
 	while (hex_letter <= 'F')
 	{
