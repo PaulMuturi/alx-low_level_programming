@@ -10,10 +10,10 @@
 int main(void)
 {
 	int n;
+	char fdigit[3];
 	int last_digit = atoi(fdigit);
 	char int_str[15];
 	int i = 0;
-	char fdigit[3];
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
