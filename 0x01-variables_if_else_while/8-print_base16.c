@@ -8,6 +8,7 @@
 int main(void)
 {
 	char current_int = 0;
+	char hex_letter;
 
 	while (current_int < 10)
 	{
@@ -15,7 +16,7 @@ int main(void)
 		current_int++;
 	}
 
-	char hex_letter = 'A';
+	hex_letter = 'A';
 
 	while (hex_letter <= 'F')
 	{
