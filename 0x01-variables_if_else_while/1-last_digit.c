@@ -11,7 +11,7 @@ int main(void)
 {
 	int n;
 	char fdigit[3];
-	int last_digit = atoi(fdigit);
+	int last_digit;
 	char int_str[15];
 	int i = 0;
 
@@ -32,6 +32,9 @@ int main(void)
 	{
 		sprintf(fdigit, "%c", int_str[i - 1]);
 	}
+
+
+	last_digit = atoi(fdigit);
 
 	if (last_digit > 5)
 	{
