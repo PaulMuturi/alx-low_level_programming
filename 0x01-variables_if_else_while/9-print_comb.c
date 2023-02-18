@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-*main - Entry poitn of the program"
+*main - Entry point of the program"
 *
 *Return: Exit status of the program"
 */
