@@ -10,30 +10,28 @@
 int main(void)
 {
 	int n;
+	int last_digit = atoi(fdigit);
+	char int_str[15];
+	int i = 0;
+	char fdigit[3];
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
-	char int_str[15];
-	int i = 0;
-	
-	sprintf(int_str, "%d\n", n);	
+
+	sprintf(int_str, "%d\n", n);
+
 	while (int_str[i] != '\n')
-	{		
+	{
 		i++;
 	}
-	char fdigit[3];
-
-	if (int_str[0] == '-' && int_str[i-1] != '0')
+	if (int_str[0] == '-' && int_str[i - 1] != '0')
 	{
-		sprintf(fdigit, "%c%c", int_str[0], int_str[i-1]);
+		sprintf(fdigit, "%c%c", int_str[0], int_str[i - 1]);
 	}
 	else
 	{
-		sprintf(fdigit, "%c", int_str[i-1]);
+		sprintf(fdigit, "%c", int_str[i - 1]);
 	}
-	
-	int last_digit = atoi(fdigit);
 
 	if (last_digit > 5)
 	{
@@ -41,7 +39,7 @@ int main(void)
 	}
 
 
-	if (6 > last_digit > 0)
+	if (last_digit > 0 && last_digit < 6)
 	{
 		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last_digit);
 	}
@@ -51,6 +49,6 @@ int main(void)
 	{
 		printf("Last digit of %d is %d and is 0\n", n, last_digit);
 	}
-	
+
 	return (0);
 }
