@@ -9,16 +9,19 @@ int main(void)
 {
 	int first_digit, second_digit, third_digit;
 	int digit = 1;
+	int tracker_num = 1;
+	int power_num;
 
 	while (digit < 1000)
 	{
 		first_digit = digit / 100;
-		second_digit = digit / 10;
+		second_digit = digit % 100;
+		second_digit = second_digit / 10;
 		third_digit = digit % 10;
 
 		if (third_digit > second_digit && second_digit > first_digit)
-		{
-			if (digit > 1)
+	{
+			if (digit > 10)
 			{
 				putchar(',');
 				putchar(' ');
