@@ -7,7 +7,7 @@
 */
 int main(void)
 {
-	char current_int = 0;
+	int current_int = 0;
 
 	while (current_int < 10)
 	{
