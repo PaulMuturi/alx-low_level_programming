@@ -14,7 +14,7 @@ int main(void)
 		putchar(current_int + 0);
 		putchar(',');
 		putchar(' ');
-		current_char++;
+		current_int++;
 	}
 
 	putchar('\n');
