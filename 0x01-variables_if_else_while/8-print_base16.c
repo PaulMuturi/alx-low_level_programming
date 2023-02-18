@@ -21,6 +21,7 @@ int main(void)
 	while (hex_letter <= 'F')
 	{
 		putchar(hex_letter);
+		hex_letter++;
 	}
 	putchar('\n');
 	return (0);
