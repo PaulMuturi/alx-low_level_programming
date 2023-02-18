@@ -9,8 +9,6 @@ int main(void)
 {
 	int first_digit, second_digit, third_digit;
 	int digit = 1;
-	int tracker_num = 1;
-	int power_num;
 
 	while (digit < 1000)
 	{
