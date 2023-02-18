@@ -17,8 +17,8 @@ int main(void)
 
 		if (last_digit > first_digit)
 		{
-			putchar(first_digit);
-			putchar(last_digit);
+			putchar(first_digit + '0');
+			putchar(last_digit + '0');
 			putchar(',');
 			putchar(' ');
 		}
