@@ -11,7 +11,7 @@ int main(void)
 
 	while (current_int < 10)
 	{
-		putchar(current_int + '');
+		putchar(current_int + '0');
 		current_int++;
 	}
 
