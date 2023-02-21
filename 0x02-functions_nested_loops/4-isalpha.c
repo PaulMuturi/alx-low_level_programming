@@ -15,14 +15,14 @@ int _isalpha(int c)
 	{
 		if (c == lowerletter)
 			return (1);
-		lowerletter++
+		lowerletter++;
 	}
 
 	while (upperletter <= 'Z')
 	{
 		if (c == upperletter)
 			return (1);
-		upperletter++
+		upperletter++;
 	}
 
 	return (0);
