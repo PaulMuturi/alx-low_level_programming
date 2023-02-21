@@ -1,4 +1,5 @@
 #include "main.h"
+int _abs_l(long int);
 
 /**
   *print_last_digit - prints last digit of a number
@@ -8,19 +9,19 @@
  */
 int print_last_digit(int n)
 {
-	int lastdigit = _abs(n) % 10;
+	int lastdigit = _abs_l(n) % 10;
 
 	_putchar(lastdigit + '0');
 	return (lastdigit);
 }
 
 /**
-  *_abs - computes absolute value of an integer
+  *_abs_l - computes absolute value of an integer
   *@j: integer value to compute
   *
   *Return: computed integer value
  */
-int _abs(long int j)
+int _abs_l(long int j)
 {
 	if (j < 0)
 	{
