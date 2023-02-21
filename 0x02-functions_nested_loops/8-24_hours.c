@@ -5,24 +5,24 @@
  */
 void jack_bauer(void)
 {
-	int i, j;
+	int i, j, firstdigit, lastdigit;
 
 	for (i = 0; i < 24; i++)
 	{
 		for (j = 0; j < 60; j++)
 		{
-			if (j < 10)
-			{
-				_putchar('0');
-			}
-			_putchar(i + '0');
+			firstdigit = i / 10;
+			lastdigit = i % 10;
+
+			_putchar(firstdigit + '0');
+			_putchar(lastdigit + '0');
 			_putchar(':');
 
-			if (i < 10)
-			{
-				_putchar('0');
-			}
-			_putchar(j + '0');
+			firstdigit = j / 10;
+			lastdigit = j % 10;
+
+			_putchar(firstdigit + '0');
+			_putchat(lastdigit + '0');
 			_putchar('\n');
 		}
 	}
