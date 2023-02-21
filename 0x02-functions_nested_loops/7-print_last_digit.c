@@ -1,5 +1,5 @@
 #include "main.h"
-int _abs_l(long int);
+#include <stdlib.h>
 
 /**
   *print_last_digit - prints last digit of a number
@@ -9,24 +9,10 @@ int _abs_l(long int);
  */
 int print_last_digit(int n)
 {
-	int lastdigit = _abs_l(n) % 10;
+	int lastdigit = abs(n) % 10;
 
 	_putchar(lastdigit + '0');
+	_putchar('\n');
 	return (lastdigit);
 }
 
-/**
-  *_abs_l - computes absolute value of an integer
-  *@j: integer value to compute
-  *
-  *Return: computed integer value
- */
-int _abs_l(long int j)
-{
-	if (j < 0)
-	{
-		return (j * (-1));
-	}
-
-	return (j);
-}
