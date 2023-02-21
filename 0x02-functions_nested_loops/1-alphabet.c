@@ -6,6 +6,17 @@
  */
 int main(void)
 {
+	print_alphabet();
+	return (0);
+}
+
+/**
+ *print_alphabet - prints lowecase alphabet letters
+ *
+ *Return: void
+*/
+void print_alphabet(void)
+{
 	char alphaletter = 'a';
 
 	while (alphaletter <= 'z')
@@ -14,6 +25,4 @@ int main(void)
 		alphaletter++;
 	}
 	_putchar('\n');
-
-	return (0);
 }
