@@ -9,16 +9,13 @@
 int _islower(int c)
 {
 	char alphaletter = 'a';
-	int isloweralpha;
 
-	isloweralpha = 0;
 	while (alphaletter <= 'z')
 	{
 		if (c == alphaletter)
 		{
-			isloweralpha = 1;
-			break;
+			return (1);
 		}
-		alphaletter++;
 	}
+	return (0);
 }
