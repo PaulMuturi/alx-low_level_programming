@@ -20,7 +20,7 @@ int print_last_digit(int n)
   *
   *Return: computed integer value
  */
-int _abs(int j)
+int _abs(long int j)
 {
 	if (j < 0)
 	{
