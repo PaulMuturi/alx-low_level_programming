@@ -30,7 +30,7 @@ long int abs_long(int j)
 	int long m = (long)j;
 	if (m < 0)
 	{
-		return (m * (long(-1)));
+		return (m * (-1));
 	}
 
 	return (m);
