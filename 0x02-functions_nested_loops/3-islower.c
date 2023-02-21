@@ -9,8 +9,9 @@
 int _islower(int c)
 {
 	char alphaletter = 'a';
-	int isloweralpha = 0;
-
+	int isloweralpha;
+	
+	isloweralpha = 0;
 	while (alphaletter <= 'z')
 	{
 		if (c == alphaletter)
