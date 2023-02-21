@@ -1,14 +1,4 @@
 #include "main.h"
-/**
-  *main - entry point to the program
-  *
-  *Return: exit status of the program
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
 
 /**
  *print_alphabet - prints lowecase alphabet letters
