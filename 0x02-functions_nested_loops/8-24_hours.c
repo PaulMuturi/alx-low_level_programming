@@ -22,7 +22,7 @@ void jack_bauer(void)
 			lastdigit = j % 10;
 
 			_putchar(firstdigit + '0');
-			_putchat(lastdigit + '0');
+			_putchar(lastdigit + '0');
 			_putchar('\n');
 		}
 	}
