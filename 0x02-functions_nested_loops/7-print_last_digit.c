@@ -8,8 +8,24 @@
  */
 int print_last_digit(int n)
 {
-	int lastdigit = n % 10;
+	int lastdigit = _abs(n) % 10;
 
 	_putchar(lastdigit + '0');
 	return (lastdigit);
+}
+
+/**
+  *_abs - computes absolute value of an integer
+  *@j: integer value to compute
+  *
+  *Return: computed integer value
+ */
+int _abs(int j)
+{
+	if (j < 0)
+	{
+		return (j * (-1));
+	}
+
+	return (j);
 }
