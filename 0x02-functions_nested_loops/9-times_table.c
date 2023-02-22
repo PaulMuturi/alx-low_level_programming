@@ -18,14 +18,14 @@ void times_table(void)
 			if (j > 0)
 			{
 				_putchar(',');
-				_putchar('.');
+				_putchar(' ');
 			}
 
 			if (firstdgt > 0)
 				_putchar(firstdgt + '0');
 			else
 				if (j > 0)
-					_putchar('.');
+					_putchar(' ');
 
 			_putchar(lastdgt + '0');
 		}
