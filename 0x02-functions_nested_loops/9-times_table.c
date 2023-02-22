@@ -24,7 +24,8 @@ void times_table(void)
 			if (firstdgt > 0)
 				_putchar(firstdgt + '0');
 			else
-				_putchar('.');
+				if (j > 0)
+					_putchar('.');
 
 			_putchar(lastdgt + '0');
 		}
