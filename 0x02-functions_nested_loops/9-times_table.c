@@ -15,19 +15,18 @@ void times_table(void)
 			firstdgt = product / 10;
 			lastdgt = product % 10;
 
-			if (firstdgt > 0)
-			{
-				_putchar(firstdgt + '0');
-			}
-			_putchar(lastdgt + '0');
-
-			if (j < 9)
+			if (j > 0)
 			{
 				_putchar(',');
 				_putchar('.');
-				_putchar('.');
 			}
-			_putchar(',');
+
+			if (firstdgt > 0)
+				_putchar(firstdgt + '0');
+			else
+				_putchar('.');
+
+			_putchar(lastdgt + '0');
 		}
 		_putchar('\n');
 	}
