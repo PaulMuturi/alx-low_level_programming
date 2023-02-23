@@ -14,7 +14,7 @@ int _isdigit(int c)
 
 	while (digit <= last_digit)
 	{
-		if (c == digit)
+		if (c == (digit + '0'))
 		{
 			return (1);
 		}
