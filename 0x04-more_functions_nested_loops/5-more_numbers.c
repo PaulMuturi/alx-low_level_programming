@@ -8,6 +8,7 @@
 void more_numbers(void)
 {
 	int i, j;
+	char firstdgt, lastdgt;
 
 	for (i = 0; i < 10; i++)
 	{
@@ -15,7 +16,13 @@ void more_numbers(void)
 
 		while (j <= 14)
 		{
-			_putchar(j + '0');
+			firstdgt = j /10;
+			lastdgt = j % 10;
+
+			if(firstdgt)
+				_putchar(firstdgt + '0');
+			_putchar(lastdgt + '0');
+
 			j++;
 		}
 
