@@ -18,7 +18,7 @@ int _isdigit(int c)
 			return (1);
 		}
 
-		digit++
+		digit++;
 	}
 	return (0);
 }
