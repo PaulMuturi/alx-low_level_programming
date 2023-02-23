@@ -8,18 +8,9 @@
   */
 int main(void)
 {
-	int result;
+	int i;
 
-	char *correct_str = "0 is zero";
-
-	result = positive_or_negative(0);
-	if (result == correct_str)
-	{
-		return (0);
-	}
-	else
-	{
-		printf("Incorrect output for input: 0)");
-		return (1);
-	}
+	i = 0;
+	positive_or_negative(i);
+	return (0);
 }
