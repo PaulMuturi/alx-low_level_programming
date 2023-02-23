@@ -14,7 +14,7 @@ int _isdigit(int c)
 
 	while (digit_ascii < last_ascii)
 	{
-		if (c == digi_ascii)
+		if (c == digit_ascii)
 		{
 			return (1);
 		}
