@@ -9,17 +9,18 @@
 
 int _isdigit(int c)
 {
-	int digit_ascii = 48;
-	int last_ascii = 57;
+	int digit = 0;
+	int last_digit = 9;
 
-	while (digit_ascii < last_ascii)
+	while (digit <= last_digit)
 	{
-		if (c == digit_ascii)
+		if (c == digit)
 		{
 			return (1);
 		}
 
-		digit_ascii++;
+		digit++;
 	}
+
 	return (0);
 }
