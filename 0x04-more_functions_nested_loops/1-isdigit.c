@@ -9,9 +9,9 @@
 
 int _isdigit(int c)
 {
-	int digit = 0;
+	char digit = '0';
 
-	while (digit < 10)
+	while (digit < '10')
 	{
 		if (c == digit)
 		{
