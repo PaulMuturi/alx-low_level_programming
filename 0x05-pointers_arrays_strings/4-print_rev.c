@@ -13,7 +13,7 @@ void print_rev(char *s)
 	int i;
 	int strlength = strlen(s);
 
-	for (i = strlength; i >= 0; i--)
+	for (i = (strlength - 1); i >= 0; i--)
 	{
 		_putchar(s[i]);
 	}
