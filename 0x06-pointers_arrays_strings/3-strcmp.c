@@ -14,14 +14,29 @@ int _strcmp(char *s1, char *s2)
 	int i;
 	int s1_len = strlen(s1);
 	int s2_len = strlen(s2);
-	char s1_sum = '0';
-	char s2_sum = '0';
 
-	for (i = 0; i < s1_len; i++)
-		s1_sum += s1[i];
+	if (s1_len == s2_len || s1_len > s2_len)
+	{
+		for (i = 0; i < s1_len; i++)
+		{
+			if (s1[i] - s2[i] != 0)
+			{
+				return (s1[i] - s2[i]);
+			}
+		}
+		return (0);
+	}
+	else if (s1_len < s2_len)
+	{
+		for (i = 0; i < s2_len; i++)
+		{
+			if (s1[i] - s2[i] != 0)
+			{
+				return (s1[i] - s2[i]);
+			}
+		}
+	}
 
-	for (i = 0; i < s2_len; i++)
-		s2_sum += s2[i];
 
-	return ((s1_sum - s2_sum));
+	return (0);
 }
