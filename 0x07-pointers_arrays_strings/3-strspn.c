@@ -13,20 +13,18 @@ unsigned int _strspn(char *s, char *accept)
 {
 	int stlen = strlen(s);
 	int spnlen = strlen(accept);
-	int i, j;
-	unsigned int found_byte = 0;
+	unsigned int i, j;
 
-	for (i = 0; i <= spnlen; i++)
+	for (i = 0; i <= (unsigned int)spnlen; i++)
 	{
-		for (j = 0; j <= stlen; j++)
+		for (j = 0; j <= (unsigned int)stlen; j++)
 		{
 			if (s[j] == accept[i])
 			{
-				found_byte++;
-				j = stlen + 1;
+				return (j + 1);
 			}
 		}
 	}
 
-	return (found_byte);
+	return (0);
 }
