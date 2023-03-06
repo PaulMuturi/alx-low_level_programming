@@ -13,18 +13,24 @@ unsigned int _strspn(char *s, char *accept)
 {
 	int stlen = strlen(s);
 	int spnlen = strlen(accept);
-	unsigned int i, j;
+	int i, j;
+	unsigned int prefixcount = 0;
 
-	for (i = 0; i <= (unsigned int)spnlen; i++)
+	for (i = 0; i < stlen; i++)
 	{
-		for (j = 0; j <= (unsigned int)stlen; j++)
+		for (j = 0; j < spnlen; j++)
 		{
-			if (s[j] == accept[i])
+			if (s[i] == accept[j])
 			{
-				return (j);
+				prefixcount++;
+				j = spnlen + 1;
+			}
+			else if (j == (spnlen - 1))
+			{
+				i = stlen + 1;
 			}
 		}
 	}
 
-	return (0);
+	return (prefixcount);
 }
