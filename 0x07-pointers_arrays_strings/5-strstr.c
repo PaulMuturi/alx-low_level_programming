@@ -6,37 +6,40 @@
   *@haystack: string to be searched
   *@needle: substring to be searched
   *
-  *Return: pointer to the beginning of lovcated substring
+  *Return: pointer to the beginning of located substring
   *NULL if not found
   */
 
 char *_strstr(char *haystack, char *needle)
 {
+	int match_len = 0;
 	int needle_len = strlen(needle);
-	int haystack_len = strlen(haystack);
-	int i,j;
-	int substr_count = 0;
+	char *match_index;
+	char *tmpned;
 
-	for (i = 0; i < haystack_len; i++)
+	while (*haystack != '\0')
 	{
-		for (j = 0; j < needle_len; j++)
+		if (*haystack == *needle)
 		{
-			if (haystack[i] == needle[j])
+			match_index = haystack;
+			tmpned = needle;
+
+			while (*haystack++ == *tmpned++)
 			{
-				substr_count++;
-			}
-			else if (haystack[i] != needle[j] && substr_count < needle_len)
-			{
-				substr_count = 0;
-				j = needle_len;
+				if (*tmpned != '\0')
+				{
+					match_len++;
+				}
 			}
 
-			if (substr_count == needle_len)
-			{
-				return (&(haystack[i]));
-			}
+			if (match_len == needle_len)
+				return (match_index);
+
+			haystack = match_index;
 		}
+
+		haystack++;
 	}
 
-	return (NULL);
-} 
+	return ("s");
+}
