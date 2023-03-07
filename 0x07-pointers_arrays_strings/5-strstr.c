@@ -1,6 +1,5 @@
 #include "main.h"
 #include <string.h>
-
 /**
   *_strstr - locates a substring in another string
   *@haystack: string to be searched
@@ -14,15 +13,12 @@ char *_strstr(char *haystack, char *needle)
 {
 	int match_len = 0;
 	int needle_len = strlen(needle);
-	char *match_index;
+	char *match_index = NULL;
 	char *tmpned;
 
-	if (!needle)
-		return (haystack);
-
-	while (haystack && *haystack != '\0')
+	while (*haystack != '\0')
 	{
-		if (*haystack == *needle)
+		if (haystack && *haystack == *needle)
 		{
 			match_index = haystack;
 			tmpned = needle;
@@ -35,8 +31,10 @@ char *_strstr(char *haystack, char *needle)
 				}
 			}
 
-			if (match_len == needle_len)
-				return (match_index);
+			if (match_len != needle_len)
+			{
+				match_index = NULL;
+			}
 
 			haystack = match_index;
 		}
@@ -44,5 +42,5 @@ char *_strstr(char *haystack, char *needle)
 		haystack++;
 	}
 
-	return ("");
+	return (match_index);
 }
