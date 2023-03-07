@@ -13,9 +13,9 @@
 char *_strchr(char *s, char c)
 {
 	int i;
-	int stlen = strlen(s);
+	/*int stlen = strlen(s);*/
 
-	for (i = 0; i <= stlen; i++)
+	for (i = 0; i <= '\0'; i++)
 	{
 		if (s[i] == c)
 			return (&s[i]);
