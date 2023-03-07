@@ -17,7 +17,10 @@ char *_strstr(char *haystack, char *needle)
 	char *match_index;
 	char *tmpned;
 
-	while (*haystack != '\0')
+	if (!needle)
+		return (haystack);
+
+	while (haystack && *haystack != '\0')
 	{
 		if (*haystack == *needle)
 		{
