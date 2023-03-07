@@ -32,11 +32,12 @@ char *_strstr(char *haystack, char *needle)
 			if (match_len != needle_len)
 			{
 				match_len = 0;
-				haystack = match_index++;
+				haystack = match_index;
 				match_index = NULL;
 			}
 		}
-		else
+
+		if (*haystack != '\0')
 			haystack++;
 	}
 
