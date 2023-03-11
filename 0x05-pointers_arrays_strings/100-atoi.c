@@ -21,7 +21,7 @@ int _atoi(char *s)
 	char prev = 'r';
 	char cur = 'r';
 	int isdgt;
-	
+
 /*	printf("\n%s\n--------------------------------\n", s);*/
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -49,7 +49,7 @@ int _atoi(char *s)
 			prev = 'r';
 			oper = 'r';
 		}
-		
+
 /*		printf("prev: %c, cur: %c, oper: %c\n", prev, cur, oper);*/
 		if (isdgt && s[i] != ' ')
 		{
