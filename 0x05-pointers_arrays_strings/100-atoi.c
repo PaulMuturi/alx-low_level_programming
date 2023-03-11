@@ -42,13 +42,7 @@ int _atoi(char *s)
 				oper = _opeval(prev, cur);
 			else if (_isoperator(cur))
 				oper = cur;
-		}
-		else if (!isdgt)
-		{
-			cur = 'r';
-			prev = 'r';
-			oper = 'r';
-		}
+		}	
 
 /*		printf("prev: %c, cur: %c, oper: %c\n", prev, cur, oper);*/
 		if (isdgt && s[i] != ' ')
