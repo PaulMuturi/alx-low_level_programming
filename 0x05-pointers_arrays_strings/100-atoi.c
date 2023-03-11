@@ -14,12 +14,12 @@ int _isdigit(char);
 int _atoi(char *s)
 {
 	int i;
-	char oper = ' ';
+	char oper = 'r';
 	int multiplier = 0;
-	int sum = 0;
+	unsigned int sum = 0;
 	char *firstdgt = NULL;
-	char prev = ' ';
-	char cur = ' ';
+	char prev = 'r';
+	char cur = 'r';
 	int isdgt;
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -31,22 +31,23 @@ int _atoi(char *s)
 			cur = s[i];
 			if (i > 0 && _isoperator(s[i - 1]))
 				prev = s[i - 1];
-			else
-				prev = ' ';
+			else if (!(_isdigit(s[i - 1])))
+				prev = 'r';
 
-			if (prev != ' ' && oper != ' ')
+			if (oper != 'r')
 				prev = oper;
 
-			oper = _opeval(prev, cur);
+			if (_isoperator(prev))
+				oper = _opeval(prev, cur);
 		}
 		else if (!isdgt)
 		{
-			cur = ' ';
-			prev = ' ';
-			oper = ' ';
+			cur = 'r';
+			prev = 'r';
+			oper = 'r';
 		}
 
-		if (isdgt)
+		if (isdgt && s[i] != ' ')
 		{
 			if (!firstdgt)
 			{
@@ -137,7 +138,10 @@ char _opeval(char prev, char cur)
   */
 int _isdigit(char c)
 {
-	if (c >= '0' && c <= '9')
+	if ((c >= '0' && c <= '9'))
+		return (1);
+
+	if (c == ' ')
 		return (1);
 
 	return (0);
