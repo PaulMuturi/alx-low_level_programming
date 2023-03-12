@@ -17,23 +17,25 @@ int main(int argc, char **argv)
 	{
 		printf("0\n");
 	}
-
-	for (i = 1; i < argc; i++)
+	else
 	{
-		num = atoi(argv[i]);
 
-		if (!num)
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error");
-			return (1);
+			num = atoi(argv[i]);
+
+			if (!num)
+			{
+				printf("Error");
+				return (1);
+			}
+
+			if (num > 0)
+				sum += num;
 		}
 
-		if (num > 0)
-			sum += num;
-	}
-
-	if (sum > 0)
 		printf("%d\n", sum);
+	}
 
 	return (0);
 }
