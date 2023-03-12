@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 
 			if (!num)
 			{
-				printf("Error");
+				printf("Error\n");
 				return (1);
 			}
 
