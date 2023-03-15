@@ -19,6 +19,7 @@ char *argstostr(int ac, char **av)
 	unsigned int avlen = 0;
 	unsigned int newln = 0;
 	int charcount = 0;
+	char nullbyte = '\0';
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -29,7 +30,7 @@ char *argstostr(int ac, char **av)
 		newln++;
 	}
 
-	ns = malloc(sizeof(char) * (avlen + newln));
+	ns = malloc(sizeof(char) * (avlen + newln) + sizeof(nullbyte));
 
 	if (!ns)
 		return (NULL);
@@ -45,6 +46,8 @@ char *argstostr(int ac, char **av)
 		ns[charcount] = '\n';
 		charcount++;
 	}
+
+	ns[charcount] = '\0';
 
 	return (ns);
 }
