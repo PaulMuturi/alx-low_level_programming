@@ -21,6 +21,12 @@ int main(int argc, char *argv[])
 	opd2 = atoi(argv[3]);
 	op = argv[2];
 
+	if (strlen(op) > 1)
+	{
+		printf("Error\n");
+		return (99);
+	}
+
 	res = get_op_func(op)(opd1, opd2);
 
 	printf("%d\n", res);
