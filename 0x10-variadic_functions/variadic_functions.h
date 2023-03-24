@@ -16,7 +16,7 @@ void print_float(va_list *);
 /**
   *struct input_types - custom data type
   *@sym: symbol for data type
-  *@f: pointer to function 
+  *@f: pointer to function
   */
 typedef struct input_types
 {

@@ -17,11 +17,9 @@ void print_all(const char * const format, ...)
 		{'\0', NULL}
 	};
 
-	int i, j;
-	char c;
+	int i, j, is_sep = 0;
 	va_list data;
-	char *separator = ", ";
-	int is_sep = 0;
+	char *separator = ", ", c;
 
 	i = 0;
 	va_start(data, format);
@@ -65,7 +63,7 @@ void print_char(va_list *input)
 }
 
 /**
- *print_string - prints string
+ *print_str - prints string
  *@input: content to be printed
  *
  *Return: void
@@ -90,7 +88,7 @@ void print_float(va_list *input)
 
 
 /**
- *print_integer - prints integer
+ *print_int - prints integer
  *@input: content to be printed
  *
  *Return: void
