@@ -21,6 +21,7 @@ void print_all(const char * const format, ...)
 	char c;
 	va_list data;
 	char *separator = ", ";
+	int is_sep = 0;
 
 	i = 0;
 	va_start(data, format);
@@ -34,11 +35,12 @@ void print_all(const char * const format, ...)
 		{
 			if (typs[j].sym == c)
 			{
-				if (i > 0)
+				if (is_sep)
 					printf("%s", separator);
 
 				(typs[j].f)(&data);
 				j++;
+				is_sep = 1;
 				break;
 			}
 
