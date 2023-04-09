@@ -23,7 +23,6 @@ int get_bit(unsigned long int n, unsigned int index)
 	else
 		return (0);
 }
-
 /**
   *_pow - calculates power of a number
   *@a: base
@@ -42,4 +41,3 @@ int _pow(unsigned int a, unsigned int b)
 
 	return (prod);
 }
-
