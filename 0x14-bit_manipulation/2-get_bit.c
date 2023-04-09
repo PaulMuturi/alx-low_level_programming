@@ -25,7 +25,7 @@ int get_bit(unsigned long int n, unsigned int index)
 }
 
 /**
-  *_pow: calculates power of a number
+  *_pow - calculates power of a number
   *@a: base
   *@b: exponent
   *Return: power result
@@ -33,7 +33,7 @@ int get_bit(unsigned long int n, unsigned int index)
 int _pow(unsigned int a, unsigned int b)
 {
 	unsigned int prod = 1;
-	
+
 	while (b > 0)
 	{
 		prod *= a;
