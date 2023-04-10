@@ -37,8 +37,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	for (i = 0; i < bt_rd / sizeof(char); i++)
 	{
 		bt_wr = write(1, ch + i, sizeof(char));
-
-		if (bt_wr <= 0)
+		if (bt_wr <= 0 || bt_wr != sizeof(char))
 		{
 			free(ch);
 			return (0);
