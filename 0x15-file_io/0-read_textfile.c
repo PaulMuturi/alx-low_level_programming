@@ -24,21 +24,31 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 
 	if (fd < 0)
+	{
+		free(ch);
 		return (0);
+	}
 
 	bt_rd = read(fd, ch, letters);
 	if (bt_rd <= 0)
+	{
+		free(ch);
 		return (0);
+	}
 
 	for (i = 0; i < bt_rd / sizeof(char); i++)
 	{
 		bt_wr = write(1, ch + i, sizeof(char));
 
 		if (bt_wr <= 0)
+		{
+			free(ch);
 			return (0);
+		}
 
 		count++;
 	}
 
+	free(ch);
 	return (count);
 }
