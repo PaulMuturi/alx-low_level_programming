@@ -22,13 +22,13 @@ int main(int argc, char *argv[])
 	file_to = argv[2];
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 < 0)
-		exit_err("Error: Can't read from file NAME_OF_THE_FILE", file_from, 98);
+		exit_err("Error: Can't read from file", file_from, 98);
 	if (access(file_to, F_OK) == 0)
 		fd2 = open(file_to, O_WRONLY | O_APPEND | O_TRUNC);
 	else
 		fd2 = open(file_to, O_CREAT | O_WRONLY | O_APPEND, 0664);
 	if (fd2 < 0)
-		exit_err("Error: Can't write to NAME_OF_THE_FILE", file_to, 99);
+		exit_err("Error: Can't write to", file_to, 99);
 	while (1)
 	{
 		bt_rd = read(fd1, buf, buf_size);
