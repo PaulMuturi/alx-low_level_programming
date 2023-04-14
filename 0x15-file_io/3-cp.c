@@ -14,11 +14,13 @@ int main(int argc, char *argv[])
 	char buf[1024], *file_from, *file_to;
 
 	if (argc != 3)
-		exit_err("Usage: cp file_from file_to", "", 97);
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		exit(97);
+	}
 	file_from = argv[1];
 	file_to = argv[2];
 	fd1 = open(file_from, O_RDONLY);
-
 	if (fd1 < 0)
 		exit_err("Error: Can't read from file NAME_OF_THE_FILE", file_from, 98);
 	if (access(file_to, F_OK) == 0)
