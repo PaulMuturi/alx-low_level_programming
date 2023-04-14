@@ -17,7 +17,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!letters || !filename)
 		return (0);
 
-	printf("-------letters: %ld\n", letters);
 	ch = malloc(sizeof(char) * letters);
 	if (!ch)
 		return (0);
