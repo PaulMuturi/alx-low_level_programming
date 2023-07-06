@@ -12,7 +12,7 @@ unsigned int binary_to_uint(const char *b)
 
 	unsigned int sum = 0, factor = 1;
 
-	if (!b)
+	if (b == NULL)
 		return (0);
 
 	len = _strlen(b);
@@ -20,7 +20,7 @@ unsigned int binary_to_uint(const char *b)
 	for (i = (len - 1); i >= 0; i--)
 	{
 		c = b[i];
-		if (c != '1' || c != '0')
+		if (c != '1' && c != '0')
 			return (0);
 
 		sum += (factor * (c - '0'));
