@@ -1,48 +1,39 @@
 #include "main.h"
 
 /**
-  *binary_to_uint - converts a binary number to a number
-  *@b: pointer to a string
-  *Return: converted number
+  *binary_to_uint - converts a binary number to an unsigned int
+  *@b: string of 0 and 1 chars
+  *
+  *Return: converted unsigned integer,
+  * Returns 0 if b is not 0 or 1 or is NULL
   */
 unsigned int binary_to_uint(const char *b)
 {
-	int len, i;
-	char c;
+        int i, count = 0, sum = 0, exp = 0;
+        char c;
 
-	unsigned int sum = 0, factor = 1;
+        if (!b)
+                return (0);
 
-	if (b == NULL)
-		return (0);
+        for (i = 0; b[i] != '\0'; i++)
+        {
+                c = b[i];
 
-	len = _strlen(b);
+                if (c != '0' && c != '1')
+                        return (0);
 
-	for (i = (len - 1); i >= 0; i--)
-	{
-		c = b[i];
-		if (c != '1' && c != '0')
-			return (0);
+                count++;
+        }
 
-		sum += (factor * (c - '0'));
-		factor *= 2;
-	}
-	return (sum);
-}
+        for (i = (count - 1); i >= 0; i--)
+        {
+                if (exp == 0)
+                        exp = 1;
+                else
+                        exp *= 2;
 
-/**
-  *_strlen - counts number of characters in a string
-  *@b: pointer to string
-  *Return: number of chars in string
-  */
-int _strlen(const char *b)
-{
-	int i = 0;
-	int len = 0;
+                sum += (b[i] - '0') * exp;
+        }
 
-	while (b[i] != '\0')
-	{
-		len++;
-		i++;
-	}
-	return (len);
+        return ((unsigned int)sum);
 }
