@@ -81,6 +81,6 @@ dlistint_t *insert_atindex(dlistint_t *current_h, int n)
 	{
 		prev->next = new;
 	}
-	
+
 	return (new);
 }
