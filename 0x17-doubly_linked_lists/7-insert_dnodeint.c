@@ -18,7 +18,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (*h == NULL && idx == i)
 	{
-		insert = insert_to_emptylist(h, n);
+		insert = insert_to_emptylist(*h, n);
 		return (insert);
 	}
 	else
@@ -27,10 +27,13 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		{
 			if (idx == i)
 			{
-				insert = insert_atindex(h, n);
+				insert = insert_atindex(*h, n);
+				while ((*h)->prev != NULL)
+					*h = (*h)->prev;
 				return (insert);
 			}
 			*h = (*h)->next;
+			i++;
 		}
 	}
 	return (NULL);
@@ -38,19 +41,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 /**
   *insert_to_emptylist - insert at 0 index
-  *@h: pointer to buffer of double linked list
+  *@h: pointer to doubly linked list
   *@n: value of new node
   *Return: address to new node else NULL
   */
-dlistint_t *insert_to_emptylist(dlistint_t **h, int n)
+dlistint_t *insert_to_emptylist(dlistint_t *h, int n)
 {
-	*h = malloc(sizeof(dlistint_t));
-	if (*h == NULL)
+	h = malloc(sizeof(dlistint_t));
+	if (h == NULL)
 		return (NULL);
-	(*h)->prev = NULL;
-	(*h)->n = n;
-	(*h)->next = NULL;
-	return (*h);
+	h->prev = NULL;
+	h->n = n;
+	h->next = NULL;
+	return (h);
 }
 
 /**
@@ -60,16 +63,24 @@ dlistint_t *insert_to_emptylist(dlistint_t **h, int n)
   *
   *Return: address to new node else NULL
   */
-dlistint_t *insert_atindex(dlistint_t **current_h, int n)
+dlistint_t *insert_atindex(dlistint_t *current_h, int n)
 {
-	dlistint_t *new;
+	dlistint_t *new, *prev;
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
 
-	new->prev = (*current_h)->prev;
+
+	new->prev = current_h->prev;
 	new->n = n;
-	new->next = *current_h;
+	new->next = current_h;
+
+	prev = current_h->prev;
+	if (prev != NULL)
+	{
+		prev->next = new;
+	}
+	
 	return (new);
 }
