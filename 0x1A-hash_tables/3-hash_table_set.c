@@ -13,7 +13,7 @@
   */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx;
+	unsigned long int idx, i;
 	hash_node_t *new_node, *first_node;
 
 	if (!ht)
@@ -29,7 +29,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->next = NULL;
 
 	idx = key_index((unsigned char *)key, ht->size);
-	first_node = (ht->array)[idx];
+
+	first_node = *ht->array;
+	for (i = 0; i < idx; i++)
+	{
+		/*Traverse upto the desired index*/
+		first_node = *ht->array + i;
+	}
 
 	if (first_node)
 	{
