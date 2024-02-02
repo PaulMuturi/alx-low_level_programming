@@ -28,7 +28,9 @@ hash_table_t *hash_table_create(unsigned long int size)
 	h_table->size = size;
 	/*Initialize table fields to NULL*/
 	for (i = 0; i < size; i++)
+	{
 		(h_table->array)[i] = NULL;
+	}
 
 	return (h_table);
 }
