@@ -14,7 +14,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx;
-	hash_node_t *new_node, *current_node;
+	hash_node_t *new_node, *first_node;
 
 	if (!ht)
 		return (0);
@@ -29,17 +29,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->next = NULL;
 
 	idx = key_index((unsigned char *)key, ht->size);
-	current_node = (ht->array)[idx];
+	first_node = (ht->array)[idx];
 
-	if (current_node)
+	if (first_node)
 	{
-		/*Traverse to the end of the list*/
-		while (current_node->next != NULL)
-			current_node = current_node->next;
-		current_node->next = new_node;
+		/*Add node to beginning of list*/
+		new_node->next = first_node;
+		(ht->array)[idx] = new_node;
 	}
 	else
-		current_node = new_node;
+		first_node = new_node;
 
 	return (1);
 }
