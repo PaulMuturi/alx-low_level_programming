@@ -34,7 +34,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	for (i = 0; i < idx; i++)
 	{
 		/*Traverse upto the desired index*/
-		first_node = *ht->array + i;
+		first_node = *ht->array + (sizeof(hash_node_t) * i);
 	}
 
 	if (first_node)
